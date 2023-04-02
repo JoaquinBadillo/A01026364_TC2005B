@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #EFF3F6;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+.menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.98);
+    overflow-x: hidden;
+    padding-top: 60px;
+    text-align: center;
+  }
+
+.menu ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0;
+    justify-items: center;
+    gap: 10px;
+}
+  
+.menu li {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: calc(100% + 1.5vw);
+    display: block;
+}
+
+.menu li b {
+    font-size: calc(100% + 2vw);
+}
+
+.menu a {
+    color: #818181;
+}
+  
+.menu a:hover {
+    color: #f1f1f1;
+}
+
+.menu #closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+  
+@media screen and (max-height: 450px) {
+    .menu {padding-top: 15px;}
+    .menu a {font-size: 18px;}
+}
+
+section {
+    height: 100vh;
+    display: flex;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: calc(100% + 4vw); /*48px;*/
+    text-align: center;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: calc(100% + 2vw); /*48px;*/
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title-container {
+    padding-bottom: 5rem;
+}
+
+.main svg:hover path{
+    fill: #309CE7;
+}
+
+#about {
+    height: 100vh;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#about img {
+    max-width: 40vw;
+    max-height: 60vh;
+}
+
+#about .text-container {
+    width: 50vw;
+    font-size: calc(100% + 0.5vw);
+}
+
+#about .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#about .button {
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#about a {
+    text-decoration: none;
+    color: #EFF3F6;
+}
+
+#about a:hover {
+    color: #309CE7;
+}
+
+@media screen and (max-width: 450px) {
+    #about img {
+        max-width: 60vw;
+        max-height: 60vh;
+    }
+
+    #about .text-container {
+        width: 70vw;
+        font-size: calc(100% + 0.5vw);
+    }
+
+    #about .button-container {
+        justify-content: center;
+    }
+}
+
+#quests {
+    padding: 2vmax;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 210px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    margin: 10px;
+    color: #000;
+}
+
+.card h2 {
+    font-size: calc(80% + 1vw);
+}
+
+.card path {
+    fill: #121212;
+}
+
+.card:hover #html path {
+    fill: #F27909;
+}
+
+
+
+.card-content {
+    width:100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content a{
+    margin: 10px;
+}
+
+footer {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+  }
+  
+  a:hover > svg > #signature {
+    stroke-dasharray: 1072;
+    stroke-dashoffset: 1072;
+    animation: sign 4s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes sign {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @-webkit-keyframes sign {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
