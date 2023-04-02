@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Ubuntu&display=swap');
+
+body {
+    background-color: #121212;
+    color: #c9c9c9;
+    margin: 2vw;
+    font-size: 16px;
+}
+
+h1 {
+    color: #d9d9d9;
+}
+
+h2 {
+    color: #d9d9d9;
+}
+
+hr {
+    border-color: #b3b3b3;
+}
+
+a {
+    color: #309CE7;
+}
+
+pre * {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+}
+
+.prettyprint {
+    border: 0 !important;
+} 
+
+pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment */
+pre .pun, code .pun { color: #EFF3F6; } /* punctuation */
+pre .pln, code .pln { color: #EFF3F6; } /* plaintext */
+pre .tag, code .tag { color: #89bdff; } /* tag */
+pre .atn, code .atn { color: #c792ea; } /* attribute */
+pre .atv, code .atv { color: #c3fea6; } /* attribute value */
+
+pre.prettyprint, code.prettyprint {
+	background-color: #1E1E1E;
+    border-radius: 10px;
+}
+
+pre.prettyprint {
+    width: -moz-fit-content;
+	width: fit-content;
+}
+
+@media screen and (max-width: 700px) {
+    pre {
+        display: none;
+    }
+}

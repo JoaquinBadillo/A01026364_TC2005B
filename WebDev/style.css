@@ -148,6 +148,11 @@ h2 {
 }
 
 @media screen and (max-width: 700px) {
+    #about {
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+    }
+    
     #about img {
         max-width: 60vw;
         max-height: 60vh;

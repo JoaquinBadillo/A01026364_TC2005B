@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Cheatsheet</title>
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     
-<h1>HTML Cheatsheet</h1>
+<center><h1>HTML Cheatsheet</h1></center>
 
 <h2>a - Hyperlink</h2>
 
@@ -15,61 +18,415 @@ A hyperlink consists of 2 basic elements, a string of text and another resource 
 It allows users to click it and access the linked resource.
 
 <h3>Example</h3>
-<pre class="prettyprint">
-    <code class="language-html">
-        &lt;a href="https://developer.mozilla.org/"&gt; Mozilla Developer Network &lt;/a&gt;
-    </code>
-</pre>
 <a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
 
-<h2>p</h2>
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;a href="https://developer.mozilla.org/"&gt;  
+      Mozilla Developer Network
+  &lt;/a&gt;
+</code>
+</pre>
 
-<h2>h1, h2, ... , h6</h2>
+<hr/>
 
-<h2>div</h2>
+<h2>p - Paragraph</h2>
 
-<h2>span</h2>
+Paragraphs are elements that contain text and are separated by whitespaces when used in succession.
 
-<h2>strong</h2>
+<h3>Example</h3>
 
-<h2>i</h2>
+<p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus sequi voluptatibus magnam hic odio nisi rem consectetur 
+    libero nobis voluptate quibusdam ipsum repudiandae reiciendis harum, nam ducimus temporibus dignissimos facilis!
+</p>
 
-<h2>u</h2>
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus sequi  
+    voluptatibus magnam hic odio nisi rem consectetur libero nobis voluptate  
+    quibusdam ipsum repudiandae reiciendis harum, nam ducimus temporibus dignissimos  
+    facilis!
+  &lt;/p&gt;
+</code>
+</pre>
 
-<h2>b</h2>
+<hr/>
 
-<h2>strike</h2>
+<h2>h1, h2, ... , h6 - Headings</h2>
 
-<h2>small</h2>
+<h3>Example</h3>
+<h4>This is a level 4 heading</h4>
 
-<h2>em</h2>
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;h4&gt;
+    This is a level 4 heading  
+  &lt;/h4&gt;
+</code>
+</pre>
 
-<h2>header</h2>
+<hr/>
 
-<h2>section</h2>
+<h2>div - Division</h2>
+Creates a "division", which can be understood as section or container for styling.
 
-<h2>article</h2>
+<h3>Example</h3>
+<div>
+    Help me! I'm inside a div.
+</div>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;
+      Help me! I'm inside a div.  
+  &lt;/div&gt;
+</code>
+</pre>
+
+<hr/>
+
+<h2>span - Span</h2>
+Spans are inline elements that allow you to group and style content.
+
+<h3>Example</h3>
+<p>Hello, I will use a <span style="color: #E28964">span</span> to add style.</p>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;p&gt;
+    Hello, I will use a &lt;span style="color: #E28964"&gt;span&lt;/span&gt; to add style.  
+  &lt;/p&gt; 
+</code>
+</pre>
+
+<hr/>
+
+<h2>strong - Strong</h2>
+The visual effect of the strong tag is to make the text bold. However, it is used semantically
+to indicate that the bolded text has <strong>strong</strong> importance.
+
+<h3>Example</h3>
+<strong>Important</strong>: Tags can have semantic meaning.
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;strong&gt;Important&lt;/strong&gt;: Tags can have semantic meaning.  
+</code>
+</pre>
+
+<hr/>
+
+<h2>i - Italicize</h2>
+The <tt>i</tt> tag will italicize text. However, it is used semantically to convey that text
+should be read with a different tone. When trying to emphasize with italics the <tt>em</tt>
+tag should be used.
+
+<h3>Example</h3>
+Its <i>Leviosa</i>, not <i>Leviosaaa</i>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  Its &lt;i&gt;Leviosa&lt;/i&gt;, not &lt;i&gt;Leviosaaa&lt;/i&gt;  
+</code>
+</pre>
+
+<hr/>
+
+<h2>u - Underline</h2>
+This tag will underline text. It is used semantically for annotations like annotate 
+spelling errors.
+
+<h3>Example</h3>
+I <u style="text-decoration:#f00 wavy underline">lov</u> syntax highlighters!
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  I &lt;u style="text-decoration:#f00 wavy underline"&gt;lov&lt;/u&gt; syntax highlighters!  
+</code>
+</pre>
+
+<hr/>
+
+<h2>b - Bold</h2>
+This tag, as mentioned previously, makes the text bold; but without additional importance.
+That is it makes the text stand out but only stylistically (not semanitcally).
+
+<h3>Example</h3>
+Poor b tag, it was left behind by the <b>semantic</b> tags.
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  Poor b tag, it was left behind by the &lt;b&gt;semantic&lt;/b&gt; tags.  
+</code>
+</pre>
+
+<hr/>
+
+<h2>strike - Strikethrough</h2>
+Strike is deprecated in HTML5 and it was used to cross out (strikethrough) text.
+It has been replaced by the semantic <tt>del</tt> and <tt>s</tt> tags.
+
+<h3>Example</h3>
+<strike>Research about the strike tag</strike>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;strike&gt;Research about the strike tag&lt;/strike&gt;  
+</code>
+</pre>
+
+<hr/>
+
+<h2>small - Small</h2>
+Makes text smaller and is mainly used to add side-comments or small print.
+
+<h3>Example</h3>
+<small>Some license information</small>
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+    &lt;small&gt;Some license information&lt;/small&gt;  
+</code>
+</pre>
+
+<hr/>
+
+<h2>em - Emphasize</h2>
+Used semantically to emphasize text with italics.
+
+<h3>Example</h3>
+I <em>need</em> more time!
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  I &lt;em&gt;need&lt;/em&gt; more time!  
+</code>
+</pre>
+
+<hr/>
+
+<h2>header - Header</h2>
+Used to add introductory content like titles and authors for articles.
+
+<h3>Example</h3>
+<header>
+    <h4>Real fake doors</h4>
+
+    Come get fake doors
+</header>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;header&gt;
+    &lt;h4&gt;Real fake doors&lt;/h4&gt;  
+
+    Come get fake doors
+  &lt;/header&gt;
+</code>
+</pre>
+
+<hr/>
+
+<h2>section - Section</h2>
+Sections are divisions (divs) with additional semantic meaning. A section is considered to be
+standalone and are usually expected to have headings.
+
+<h3>Example</h3>
+<section>
+    <h4>Section Example</h4>
+
+    This is a very important section!
+</section>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;section&gt;
+    &lt;h4&gt;Section Example&lt;/h4&gt;
+    
+    This is a very important section!  
+  &lt;/section&gt;
+</code>
+</pre>
+
+<hr/>
+
+<h2>article - Article</h2>
+Articles are used for blog entries, news articles, product cards or in general self-contained
+content.
+
+<h3>Example</h3>
+<article>
+    <h4>Chat GPT is scary</h4>
+    
+    <p>Chat GPT, Open AI's chatbot is likely going to affect many jobs</p>
+</article>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;article&gt;
+    &lt;h4&gt;Chat GPT is scary&lt;/h4&gt;
+    
+    &lt;p&gt;Chat GPT, Open AI's chatbot is likely going to affect many jobs&lt;/p&gt;  
+  &lt;/article&gt;
+</code>
+</pre>
+
+<hr/>
 
 <h2>aside</h2>
+<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;
+      Help me! I'm inside a div.  
+  &lt;/div&gt;
+</code>
+</pre>
+
+<hr/>
 
 <h2>footer</h2>
+<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;
+      Help me! I'm inside a div.  
+  &lt;/div&gt;
+</code>
+</pre>
+
+<hr/>
 
 <h2>nav</h2>
+<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;
+      Help me! I'm inside a div.  
+  &lt;/div&gt;
+</code>
+</pre>
+
+<hr/>
 
 <h2>img</h2>
+<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;
+      Help me! I'm inside a div.  
+  &lt;/div&gt;
+</code>
+</pre>
+
+<hr/>
 
 <h2>br</h2>
+<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;
+      Help me! I'm inside a div.  
+  &lt;/div&gt;
+</code>
+</pre>
+
+<hr/>
 
 <h2>hr</h2>
+<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;
+      Help me! I'm inside a div.  
+  &lt;/div&gt;
+</code>
+</pre>
+
+<hr/>
 
 <h2>form</h2>
+<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
 
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;
+      Help me! I'm inside a div.  
+  &lt;/div&gt;
+</code>
+</pre>
+
+<hr/>
 <h2>table</h2>
+<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;
+      Help me! I'm inside a div.  
+  &lt;/div&gt;
+</code>
+</pre>
+
+<hr/>
 
 <h2>ul</h2>
+<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;
+      Help me! I'm inside a div.  
+  &lt;/div&gt;
+</code>
+</pre>
+
+<hr/>
 
 <h2>ol</h2>
+<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
 
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;div&gt;
+      Help me! I'm inside a div.  
+  &lt;/div&gt;
+</code>
+</pre>
+
+<hr/>
 
 </body>
 </html>
