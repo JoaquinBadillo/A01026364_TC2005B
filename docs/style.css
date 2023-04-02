@@ -16,6 +16,10 @@ nav {
     padding: 10px;
 }
 
+nav svg:hover {
+    cursor: pointer;
+}
+
 .menu {
     height: 100%;
     width: 0;
@@ -63,7 +67,7 @@ nav {
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 36px;
+    font-size: calc(100% + 2vw);
     margin-left: 50px;
 }
   
@@ -143,19 +147,23 @@ h2 {
     color: #309CE7;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 700px) {
     #about img {
         max-width: 60vw;
         max-height: 60vh;
     }
 
     #about .text-container {
-        width: 70vw;
+        width: 90vw;
         font-size: calc(100% + 0.5vw);
     }
 
     #about .button-container {
         justify-content: center;
+    }
+
+    #optional {
+        display: none;
     }
 }
 
