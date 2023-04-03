@@ -29,7 +29,7 @@ It allows users to click it and access the linked resource.
 </code>
 </pre>
 
-<hr/>
+<hr />
 
 <h2>p - Paragraph</h2>
 
@@ -54,9 +54,9 @@ Paragraphs are elements that contain text and are separated by whitespaces when 
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>h1, h2, ... , h6 - Headings</h2>
+<h2>h1, h2, ... , h6 - Section Headings</h2>
 
 <h3>Example</h3>
 <h4>This is a level 4 heading</h4>
@@ -70,28 +70,28 @@ Paragraphs are elements that contain text and are separated by whitespaces when 
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>div - Division</h2>
-Creates a "division", which can be understood as section or container for styling.
+<h2>div - Content Division</h2>
+Creates a "division", which can be understood as container, often relevant for styling.
 
 <h3>Example</h3>
 <div>
-    Help me! I'm inside a div.
+    Help me! I'm trapped inside a div.
 </div>
 
 <pre class="prettyprint">
 <code class="language-html">
   &lt;!-- HTML --&gt;
   &lt;div&gt;
-      Help me! I'm inside a div.  
+      Help me! I'm trapped inside a div.  
   &lt;/div&gt;
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>span - Span</h2>
+<h2>span - Content Span</h2>
 Spans are inline elements that allow you to group and style content.
 
 <h3>Example</h3>
@@ -106,9 +106,9 @@ Spans are inline elements that allow you to group and style content.
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>strong - Strong</h2>
+<h2>strong - Strong Importance</h2>
 The visual effect of the strong tag is to make the text bold. However, it is used semantically
 to indicate that the bolded text has <strong>strong</strong> importance.
 
@@ -122,11 +122,11 @@ to indicate that the bolded text has <strong>strong</strong> importance.
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>i - Italicize</h2>
-The <tt>i</tt> tag will italicize text. However, it is used semantically to convey that text
-should be read with a different tone. When trying to emphasize with italics the <tt>em</tt>
+<h2>i - Idiomatic Text</h2>
+The <code>i</code> tag will italicize text. However, it is used semantically to convey that text
+should be read with a different tone. When trying to emphasize with italics the <code>em</code>
 tag should be used.
 
 <h3>Example</h3>
@@ -139,9 +139,9 @@ Its <i>Leviosa</i>, not <i>Leviosaaa</i>
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>u - Underline</h2>
+<h2>u - Unarticulated Annotation/Underline</h2>
 This tag will underline text. It is used semantically for annotations like annotate 
 spelling errors.
 
@@ -155,11 +155,11 @@ I <u style="text-decoration:#f00 wavy underline">lov</u> syntax highlighters!
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>b - Bold</h2>
+<h2>b - Bring attention to/Boldface</h2>
 This tag, as mentioned previously, makes the text bold; but without additional importance.
-That is it makes the text stand out but only stylistically (not semanitcally).
+Meaning, it makes the text stand out but only stylistically (not semanitcally).
 
 <h3>Example</h3>
 Poor b tag, it was left behind by the <b>semantic</b> tags.
@@ -171,11 +171,11 @@ Poor b tag, it was left behind by the <b>semantic</b> tags.
 </code>
 </pre>
 
-<hr/>
+<hr />
 
 <h2>strike - Strikethrough</h2>
 Strike is deprecated in HTML5 and it was used to cross out (strikethrough) text.
-It has been replaced by the semantic <tt>del</tt> and <tt>s</tt> tags.
+It has been replaced by the semantic <code>del</code> and <code>s</code> tags.
 
 <h3>Example</h3>
 <strike>Research about the strike tag</strike>
@@ -187,10 +187,10 @@ It has been replaced by the semantic <tt>del</tt> and <tt>s</tt> tags.
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>small - Small</h2>
-Makes text smaller and is mainly used to add side-comments or small print.
+<h2>small - Side comment</h2>
+Makes text smaller and is mainly used to add side-comments or small print (like legal information).
 
 <h3>Example</h3>
 <small>Some license information</small>
@@ -201,9 +201,9 @@ Makes text smaller and is mainly used to add side-comments or small print.
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>em - Emphasize</h2>
+<h2>em - Emphasis</h2>
 Used semantically to emphasize text with italics.
 
 <h3>Example</h3>
@@ -216,7 +216,7 @@ I <em>need</em> more time!
 </code>
 </pre>
 
-<hr/>
+<hr />
 
 <h2>header - Header</h2>
 Used to add introductory content like titles and authors for articles.
@@ -239,9 +239,9 @@ Used to add introductory content like titles and authors for articles.
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>section - Section</h2>
+<h2>section - Generic Section</h2>
 Sections are divisions (divs) with additional semantic meaning. A section is considered to be
 standalone and are usually expected to have headings.
 
@@ -263,9 +263,9 @@ standalone and are usually expected to have headings.
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>article - Article</h2>
+<h2>article - Article Contents</h2>
 Articles are used for blog entries, news articles, product cards or in general self-contained
 content.
 
@@ -287,146 +287,323 @@ content.
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>aside</h2>
-<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+<h2>aside - Aside</h2>
+Used semantically to create a section that is indirectly (<em>tangentially</em>) related to the 
+main content of the page. Note that additional styling is often used to indicate that an aside
+tag is being used.
 
-<pre class="prettyprint">
-<code class="language-html">
-  &lt;!-- HTML --&gt;
-  &lt;div&gt;
-      Help me! I'm inside a div.  
-  &lt;/div&gt;
-</code>
-</pre>
+<h3>Example</h3>
 
-<hr/>
-
-<h2>footer</h2>
-<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+Linear Algebra is a field of mathematics that has important applications in Computer  
+Science. 
+<aside>
+  Vectors and matrices are used a lot in game development!
+</aside>
 
 <pre class="prettyprint">
 <code class="language-html">
   &lt;!-- HTML --&gt;
-  &lt;div&gt;
-      Help me! I'm inside a div.  
-  &lt;/div&gt;
+  Linear Algebra is a field of mathematics that has important applications in Computer  
+  Science.
+  &lt;aside&gt;
+    Vectors and matrices are used a lot in game development!. 
+  &lt;/aside&gt;
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>nav</h2>
-<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+<h2>footer - Footer</h2>
+A footer is a sort of subsection that contains information about the section where it is contained
+such as copyright and authors. Websites often have a footer for the main content, but sections
+inside a document can also have footers themselves.
+
+<h3>Example</h3>
+<footer>
+  Made with ❤️ by me.
+</footer>
 
 <pre class="prettyprint">
 <code class="language-html">
   &lt;!-- HTML --&gt;
-  &lt;div&gt;
-      Help me! I'm inside a div.  
-  &lt;/div&gt;
+  &lt;footer&gt;
+    Made with ❤️ by me. 
+  &lt;/footer&gt;
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>img</h2>
-<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+<h2>nav - Navigation Section</h2>
+The nav section is used to provide links that allow users to navigate a webpage
+(a document) or website (multiple documents).
+
+<h3>Example</h3>
+
+<nav>
+  <ul>
+    <li><a href="https://joaquinbadillo.github.io/A01026364_TC2005B">Back to Coursework</a></li>
+  </ul>
+</nav>
 
 <pre class="prettyprint">
 <code class="language-html">
   &lt;!-- HTML --&gt;
-  &lt;div&gt;
-      Help me! I'm inside a div.  
-  &lt;/div&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;a href="joaquinbadillo.github.io/A01026364_TC2005B"&gt;Back to Coursework&lt;/a&gt;  
+      &lt;/li&gt;
+    &lt;/ul&gt;  
+  &lt;/nav&gt;
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>br</h2>
-<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+<h2>img - Image Embed</h2>
+The img tag allows you to add images. It uses attributes to specify the path of the image or
+relevant information like a description in case the image cannot be shown or needs to be read aloud.
+It cannot contain children as it is a void element and therefore has no ending tag.
+
+<h3>Example</h3>
+
+<a href="https://github.com/JoaquinBadillo">
+  <img src="https://img.shields.io/github/followers/JoaquinBadillo?style=social" 
+    alt="GitHub Followers Shield">
+</a>
 
 <pre class="prettyprint">
 <code class="language-html">
   &lt;!-- HTML --&gt;
-  &lt;div&gt;
-      Help me! I'm inside a div.  
-  &lt;/div&gt;
+  &lt;a href="https://github.com/JoaquinBadillo"&gt;
+    &lt;img src="https://img.shields.io/github/followers/JoaquinBadillo?style=social"   
+      alt="GitHub Followers Shield"&gt;
+  &lt;/a&gt;
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>hr</h2>
-<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+<h2>br - Line Break</h2>
+It is a void element (it has no ending tag and thus cannot contain children) that creates a line break.
+
+<h3>Example</h3>
+Text before line break
+<br />
+Text after line break
 
 <pre class="prettyprint">
 <code class="language-html">
   &lt;!-- HTML --&gt;
-  &lt;div&gt;
-      Help me! I'm inside a div.  
-  &lt;/div&gt;
+  Text before line break  
+  &lt;br&gt;
+  Text after line break  
 </code>
 </pre>
 
-<hr/>
+<em>Note</em>: Sometimes the self-closing tag <code>&lt;br/&gt;</code> is used for readability or compatibility,
+but HTML ignores the slash, as self-closing tags do not exist in HTML.
 
-<h2>form</h2>
-<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+<hr />
+
+<h2>hr - Horizontal Rule/Thematic Break</h2>
+Creates a horizontal rule (a horizontal line) that semantically indicates a theme break.
+
+<h3>Example</h3>
+Front-end developers design User Interfaces with a User Experience in mind.
+<hr />
+Back-end developers implement business logic and server-side functionality.
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  Front-end developers design User Interfaces with a User Experience in mind.  
+  &lt;hr&gt;
+  Back-end developers implement business logic and server-side functionality.
+</code>
+</pre>
+
+<hr />
+
+<h2>form - Form</h2>
+A form can be understood as a section that contains fields for the users to fill and submit.
+
+<h3>Example</h3>
+<form>
+  <h4>Consumer Satisfaction Survey</h4>
+  Did you understand the purpose of a form?
+  <br />
+
+  <input type="radio" name="Yes" value="yes" /> Yes
+  <input type="radio" name="No" value="no" /> No
+  <br />
+
+  <button type="submit">Submit!</button>
+</form>
+<pre class="prettyprint">
+<code class="language-html">
+  &lt;!-- HTML --&gt;
+  &lt;form&gt;
+    &lt;h4&gt;Consumer Satisfaction Survey&lt;/h4&gt;
+    Did you understand the purpose of a form?
+    &lt;br/&gt;
+
+    &lt;input type="radio" name="Yes" value="yes"/&gt; Yes  
+    &lt;input type="radio" name="No" value="no"/&gt; No
+    &lt;br/&gt;
+
+    &lt;button type="submit"&gt;Submit!&lt;/button&gt;
+  &lt;/form&gt;
+</code>
+</pre>
+
+<hr />
+<h2>table - Table</h2>
+Create a HTML table: a bidimensional set of data.
+
+<h3>Example</h3>
+<table border="1px solid white">
+  <tr>
+    <td></td>
+    <th>Actual Positive</th>
+    <th>Actual Negative</th>
+  </tr>
+
+  <tr>
+    <th>Predicted Positive</th>
+    <td>True Positive</td>
+    <td>False Positive</td>
+  </tr>
+
+  <tr>
+    <th>Predicted Negative</th>
+    <td>False Negative</td>
+    <td>True Negative</td>
+  </tr>
+</table>
 
 <pre class="prettyprint">
 <code class="language-html">
   &lt;!-- HTML --&gt;
-  &lt;div&gt;
-      Help me! I'm inside a div.  
-  &lt;/div&gt;
+  &lt;table border="1px solid white"&gt;  
+    &lt;tr&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;th&gt;Actual Positive&lt;/th&gt;
+      &lt;th&gt;Actual Negative&lt;/th&gt;
+    &lt;/tr&gt;
+  
+    &lt;tr&gt;
+      &lt;th&gt;Predicted Positive&lt;/th&gt;
+      &lt;td&gt;True Positive&lt;/td&gt;
+      &lt;td&gt;False Positive&lt;/td&gt;
+    &lt;/tr&gt;
+  
+    &lt;tr&gt;
+      &lt;th&gt;Predicted Negative&lt;/th&gt;
+      &lt;td&gt;False Negative&lt;/td&gt;
+      &lt;td&gt;True Negative&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
 </code>
 </pre>
 
-<hr/>
-<h2>table</h2>
-<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+<hr />
+
+<h2>ul - Unordered List</h2>
+Contains an unordered list of items (a list without indexing, like bullet point lists).
+
+<h3>Example</h3>
+
+<h4>TODO List</h4>
+<ul>
+  <li><del>Finish HTML Cheatsheet</del></li>
+  <li>Practice LeetCode</li>
+  <li>Sleep</li>
+</ul>
 
 <pre class="prettyprint">
 <code class="language-html">
   &lt;!-- HTML --&gt;
-  &lt;div&gt;
-      Help me! I'm inside a div.  
-  &lt;/div&gt;
+  &lt;h4&gt;TODO List&lt;/h4&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;del&gt;Finish HTML Cheatsheet&lt;/del&gt;&lt;/li&gt;  
+    &lt;li&gt;Practice LeetCode&lt;/li&gt;
+    &lt;li&gt;Sleep&lt;/li&gt;
+  &lt;/ul&gt;
 </code>
 </pre>
 
-<hr/>
+<hr />
 
-<h2>ul</h2>
-<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
+<h2>ol - Ordered List</h2>
+Represents an ordered list of items, by default these are numbered lists, but they can also use other
+kinds of labels like letters or roman numerals.
+
+<h3>Example</h3>
+<h4>Sorting Algorithm</h4>
+<ol>
+  <li>If not sorted:</li>
+    <ol type="a">
+      <li>Sort left half</li>
+      <li>Sort right half</li>
+      <li>Merge sorted halves</li>
+    </ol>
+  <li>Else:</li>
+    <ol type="a">
+      <li>Return sorted array</li>
+    </ol>
+</ol>
 
 <pre class="prettyprint">
 <code class="language-html">
   &lt;!-- HTML --&gt;
-  &lt;div&gt;
-      Help me! I'm inside a div.  
-  &lt;/div&gt;
+  &lt;h4&gt;Sorting Algorithm&lt;/h4&gt;
+  &lt;ol&gt;
+    &lt;li&gt;If size > 1:&lt;/li&gt;
+        &lt;li&gt;Sort left half&lt;/li&gt;
+        &lt;li&gt;Sort right half&lt;/li&gt;
+        &lt;li&gt;Merge sorted halves&lt;/li&gt;  
+      &lt;/ol&gt;
+    &lt;li&gt;Else:&lt;/li&gt;
+      &lt;ol type="a"&gt;
+        &lt;li&gt;Return sorted array&lt;/li&gt;
+      &lt;/ol&gt;
+  &lt;/ol&gt;
 </code>
 </pre>
 
-<hr/>
 
-<h2>ol</h2>
-<a href="https://developer.mozilla.org/"> Mozilla Developer Network </a>
-
-<pre class="prettyprint">
-<code class="language-html">
-  &lt;!-- HTML --&gt;
-  &lt;div&gt;
-      Help me! I'm inside a div.  
-  &lt;/div&gt;
-</code>
-</pre>
-
-<hr/>
-
+  <footer>
+    <a href="https://joaquinbadillo.github.io" title="My Portfolio">
+    <svg height="7vh" viewBox="0 0 233 174" fill="none">
+      <path
+        id="signature"
+        d="M37.3308 29.3259C59.0183 25.9417 74.2639 19.5563 83.8385 10C87.2439 23.4012 90.8892 39.8673 93.7444 
+        57.176C96.5997 74.4847 96.8624 79.3958 96.8624 79.3958M118.156 72.1385C107.366 75.6574 96.8624 79.3958 96.8624 
+        79.3958M96.8624 79.3958C87.7489 82.6482 78.9601 85.9909 70.6493 89.4058C46.3544 99.3884 27.0687 109.622 15.5537 
+        119.466C9.79134 124.393 6.81595 128.522 5.63529 131.658C4.66172 134.244 4.75571 136.408 6.27583 139.052C8.1006 
+        142.225 12.3138 146.536 20.9359 151.482C29.4357 156.358 41.4215 161.397 57.6339 166.435C69.2332 170.04 76.5685 
+        169.171 81.2832 166.928C85.9915 164.689 90.0678 160.137 93.1941 152.261C99.6843 135.911 100.169 110.021 97.1114 
+        81.644M96.8624 79.3958C96.9476 80.1454 97.0306 80.8949 97.1114 81.644M96.8624 79.3958L97.1114 81.644M185.194 
+        10.0223C195.381 10.2007 201.284 11.4722 208.557 14.642C212.79 16.487 216.789 19.4363 219.968 22.6903C223.127 
+        25.9244 225.776 29.77 226.936 33.5898C228.026 37.1805 228.103 40.5418 227.927 42.9665C227.839 44.1898 227.683 
+        45.205 227.545 45.9316C227.476 46.2957 227.411 46.5897 227.36 46.8037C227.347 46.8597 227.335 46.9103 227.324 
+        46.9552C227.317 46.9818 227.311 47.0065 227.305 47.0291C224.643 57.4816 208.184 70.3909 202.784 75.2224C208.628 
+        79.3958 218.927 91.4187 222.288 104.853C231.195 140.452 190.074 171.291 153.406 168.866C147.405 168.469 142.282 
+        168.107 138.271 166.029C134.123 163.879 131.54 160.631 130.468 156.774C128.444 149.496 131.884 140.581 137.625 
+        132.235C149.323 115.232 173.835 96.3638 201.316 89.1971M185.194 10.0223C184.337 10.0073 183.448 10 182.527 
+        10C162.314 10 144.289 14.172 129.801 21.1142M185.194 10.0223C182.527 13.0998 176.119 23.5925 169.833 
+        32.6674C163.623 41.6339 157.739 50.4364 150.565 62.1845C141.827 76.495 135.396 88.4001 129.549 99.6237C128.407 
+        101.816 127.107 104.175 125.721 106.831C110.035 136.891 93.1847 168.729 74.5027 168.729"
+        stroke="#D9D9D9"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-dasharray="3622.62 1"
+      />
+    </svg>
+  </a>
+  </footer>
 </body>
 </html>
