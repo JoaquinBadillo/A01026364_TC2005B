@@ -4,15 +4,25 @@ body {
     background-color: #121212;
     color: #c9c9c9;
     font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.content {
     margin-left: 10%;
     margin-right: 10%;
 }
 
 h1 {
+    font-weight: bolder;
+    font-size: calc(100% + 2vw); /*48px;*/
+    text-align: center;
     color: #d9d9d9;
 }
 
 h2 {
+    font-weight: bold;
+    font-size: calc(100% + 1vw); /*48px;*/
     color: #d9d9d9;
 }
 
@@ -22,6 +32,73 @@ hr {
 
 a {
     color: #309CE7;
+}
+
+.nav-icon {
+    padding: 15px;
+    margin: 0;
+}
+
+.nav-icon svg:hover {
+    cursor: pointer;
+}
+
+.menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.98);
+    overflow-x: hidden;
+    padding-top: 60px;
+    text-align: center;
+    margin: 0;
+  }
+
+.menu ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0;
+    justify-items: center;
+    gap: 10px;
+}
+  
+.menu li {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: calc(100% + 1.5vw);
+    display: block;
+}
+
+.menu li b {
+    font-size: calc(100% + 2vw);
+}
+
+.menu a {
+    color: #818181;
+    text-decoration: none;
+}
+  
+.menu a:hover {
+    color: #f1f1f1;
+}
+
+.menu #closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: calc(100% + 2vw);
+    margin-left: 50px;
+}
+  
+@media screen and (max-height: 450px) {
+    .menu {padding-top: 15px;}
+    .menu a {font-size: 18px;}
 }
 
 pre * {
@@ -56,28 +133,28 @@ pre.prettyprint {
     }
 }
 
-footer {
+.main {
     position: relative;
     display: flex;
     justify-content: space-evenly;
     padding: 1rem;
-  }
+}
   
-  a:hover > svg > #signature {
+a:hover > svg > #signature {
     stroke-dasharray: 1072;
     stroke-dashoffset: 1072;
     animation: sign 4s;
     animation-iteration-count: infinite;
-  }
+}
   
-  @keyframes sign {
+@keyframes sign {
     to {
       stroke-dashoffset: 0;
     }
-  }
+}
   
-  @-webkit-keyframes sign {
+@-webkit-keyframes sign {
     to {
       stroke-dashoffset: 0;
     }
-  }
+}

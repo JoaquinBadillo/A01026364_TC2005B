@@ -1,3 +1,23 @@
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(0, #121212 30%, #174465 50%, #121212 70%);
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(0, #121212 30%, #309ce7 50%, #121212 70%);
+}
+  
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(0, #121212 30%, #309ce7 50%, #121212 70%);
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
