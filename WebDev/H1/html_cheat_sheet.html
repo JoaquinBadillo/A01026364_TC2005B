@@ -7,6 +7,7 @@
     <title>HTML Cheatsheet</title>
     <script src="prettify.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="../img/favicon-32x32.png" type="image/png">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -109,6 +110,8 @@ Paragraphs are elements that contain text and are separated by whitespaces when 
 <hr />
 
 <h2>h1, h2, ... , h6 - Section Headings</h2>
+The h1 to h6 elements create section headings. The number represents the level of the heading and they are expected to be used
+sequentially: First a level 1 heading, then a level 2, ... without skipping levels.
 
 <h3>Example</h3>
 <h4>This is a level 4 heading</h4>
@@ -158,6 +161,9 @@ Spans are inline elements that allow you to group and style content.
 </code>
 </pre>
 
+<em>Note:</em> Using inline styles is considered to be a bad practice. This example uses the style attribute
+to show how the span element can be used for styling purposes.
+
 <hr />
 
 <h2>strong - Strong Importance</h2>
@@ -165,7 +171,7 @@ The visual effect of the strong tag is to make the text bold. However, it is use
 to indicate that the bolded text has <strong>strong</strong> importance.
 
 <h3>Example</h3>
-<strong>Important</strong>: Tags can have semantic meaning.
+<strong>Important:</strong> Tags can have semantic meaning.
 
 <pre class="prettyprint">
 <code class="language-html">
@@ -194,7 +200,7 @@ Its <i>Leviosa</i>, not <i>Leviosaaa</i>
 <hr />
 
 <h2>u - Unarticulated Annotation/Underline</h2>
-This tag will underline text. It is used semantically for annotations like annotate 
+This tag will underline text. It is used semantically for annotations like wavy lines for 
 spelling errors.
 
 <h3>Example</h3>
@@ -206,6 +212,9 @@ I <u style="text-decoration:#f00 wavy underline">lov</u> syntax highlighters!
   I &lt;u style="text-decoration:#f00 wavy underline"&gt;lov&lt;/u&gt; syntax highlighters!  
 </code>
 </pre>
+
+<em>Note:</em> Using inline styles is considered to be a bad practice. This example uses the style attribute
+to format the line so that it matches the usual spelling error annotation.
 
 <hr />
 
@@ -485,15 +494,18 @@ A form can be understood as a section that contains fields for the users to fill
 <h3>Example</h3>
 <form>
   <h4>Consumer Satisfaction Survey</h4>
+
   Did you understand the purpose of a form?
   <br />
 
-  <input type="radio" name="Yes" value="yes" /> Yes
-  <input type="radio" name="No" value="no" /> No
+  <input type="radio" name="Understood" value="yes" required/> Yes
+  <input type="radio" name="Understood" value="no" required/> No
+
   <br />
 
   <button type="submit">Submit!</button>
 </form>
+
 <pre class="prettyprint">
 <code class="language-html">
   &lt;!-- HTML --&gt;
@@ -502,14 +514,18 @@ A form can be understood as a section that contains fields for the users to fill
     Did you understand the purpose of a form?
     &lt;br/&gt;
 
-    &lt;input type="radio" name="Yes" value="yes"/&gt; Yes  
-    &lt;input type="radio" name="No" value="no"/&gt; No
+    &lt;input type="radio" name="Yes" value="yes" required/&gt; Yes  
+    &lt;input type="radio" name="No" value="no" required/&gt; No
     &lt;br/&gt;
 
     &lt;button type="submit"&gt;Submit!&lt;/button&gt;
   &lt;/form&gt;
 </code>
 </pre>
+
+<em>Note:</em> If you actually submit the form you will be redirected to this site with a slight variation on the URL.
+<br />
+This change in the URL stores your answer in plain text with key/value pairs known as parameters.
 
 <hr />
 <h2>table - Table</h2>
@@ -614,6 +630,7 @@ kinds of labels like letters or roman numerals.
   &lt;h4&gt;Sorting Algorithm&lt;/h4&gt;
   &lt;ol&gt;
     &lt;li&gt;If size > 1:&lt;/li&gt;
+      &lt;ol type="a"&gt;
         &lt;li&gt;Sort left half&lt;/li&gt;
         &lt;li&gt;Sort right half&lt;/li&gt;
         &lt;li&gt;Merge sorted halves&lt;/li&gt;  

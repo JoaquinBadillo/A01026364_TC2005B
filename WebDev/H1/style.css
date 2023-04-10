@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
     background-color: #121212;
@@ -6,6 +6,7 @@ body {
     font-size: 16px;
     padding: 0;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .content {
@@ -15,15 +16,26 @@ body {
 
 h1 {
     font-weight: bolder;
-    font-size: calc(100% + 2vw); /*48px;*/
+    font-size: calc(100% + 2vw);
     text-align: center;
-    color: #d9d9d9;
+    color: #ebebeb;
 }
 
 h2 {
     font-weight: bold;
-    font-size: calc(100% + 1vw); /*48px;*/
-    color: #d9d9d9;
+    font-size: calc(100% + 1vw);
+    color: #e6e6e6;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: calc(80% + 1vw);
+    color: #aeabd6;
+}
+
+h4 {
+    font-size: calc(80% + 0.6vw);
+    color: #cfabd6;
 }
 
 hr {
@@ -77,6 +89,7 @@ a {
 
 .menu li b {
     font-size: calc(100% + 2vw);
+    color: #EFF3F6;
 }
 
 .menu a {
@@ -138,6 +151,14 @@ pre.prettyprint {
     display: flex;
     justify-content: space-evenly;
     padding: 1rem;
+}
+
+form input {
+    margin: 10px;
+}
+
+button {
+    padding: 5px;
 }
   
 a:hover > svg > #signature {
