@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>CSS Cheat Sheet</title>
+    <script src="./js/menu.js" defer></script>
+</head>
+<body>
+<div id="menu" class="menu">
+    <a id="closebtn">&times;</a>
+
+    <ul>
+        <li><b>Main Menu</b></li>
+        <li><a href="../index.html" onclick="closeMenu()">Home</a></li>
+    </ul>
+    
+</div>
+
+<nav class="nav-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="6vmin" viewBox="0 0 100 85" fill="none" id="esc">
+        <rect x="1" y="1" width="98" height="83" rx="9" fill="#EFF3F6" stroke="black" stroke-width="2"/>
+        <rect x="13.4031" y="11.625" width="73.1938" height="61.75" rx="9" fill="#EFF3F6" stroke="black" stroke-width="2"/>
+        <path d="M50.0079 52.3672C48.8145 52.3672 47.6643 52.2283 46.5573 51.9507C45.4677 51.6557 44.6028 51.2913 
+        43.9629 50.8575L45.312 47.9424C45.9519 48.3415 46.7043 48.6711 47.5691 48.9314C48.4513 49.1744 49.3161 49.2958 50.1636 
+        49.2958C51.0976 49.2958 51.7548 49.183 52.1353 48.9575C52.5332 48.7319 52.7321 48.4195 52.7321 48.0204C52.7321 47.6907 
+        52.5764 47.4478 52.2651 47.2916C51.971 47.1181 51.5732 46.988 51.0716 46.9012C50.57 46.8145 50.0166 46.7277 49.4112 
+        46.6409C48.8231 46.5542 48.2264 46.4414 47.621 46.3026C47.0157 46.1464 46.4622 45.9208 45.9606 45.6258C45.459 45.3309 
+        45.0525 44.9318 44.7412 44.4285C44.4472 43.9253 44.3002 43.2746 44.3002 42.4764C44.3002 41.5915 44.551 40.8106 45.0525 
+        40.1339C45.5714 39.4571 46.3152 38.9279 47.2838 38.5462C48.2523 38.1471 49.4112 37.9475 50.7603 37.9475C51.7116 37.9475 
+        52.6802 38.0516 53.6661 38.2598C54.6519 38.4681 55.4735 38.7717 56.1308 39.1708L54.7817 42.06C54.1071 41.6609 53.4239 
+        41.3919 52.7321 41.2531C52.0575 41.0969 51.4003 41.0188 50.7603 41.0188C49.8609 41.0188 49.2036 41.1403 48.7885 
+        41.3832C48.3734 41.6262 48.1659 41.9385 48.1659 42.3203C48.1659 42.6673 48.3129 42.9276 48.6069 43.1011C48.9182 43.2746 
+        49.3247 43.4134 49.8263 43.5176C50.3279 43.6217 50.8727 43.7171 51.4608 43.8039C52.0662 43.8733 52.6715 43.9861 53.2769 
+        44.1422C53.8823 44.2984 54.4271 44.524 54.9114 44.819C55.413 45.0966 55.8194 45.487 56.1308 45.9902C56.4421 46.4761 
+        56.5978 47.1181 56.5978 47.9163C56.5978 48.7839 56.3383 49.5561 55.8194 50.2328C55.3006 50.8922 54.5482 51.4128 53.5623 
+        51.7945C52.5937 52.1763 51.4089 52.3672 50.0079 52.3672Z" fill="black"/>
+        <path d="M65.8404 52.3672C64.3357 52.3672 62.9952 52.0635 61.8191 51.4562C60.6429 50.8315 59.7176 49.9726 59.043 
+        48.8794C58.3858 47.7862 58.0571 46.5455 58.0571 45.1573C58.0571 43.7518 58.3858 42.5111 59.043 41.4353C59.7176 40.3421 
+        60.6429 39.4919 61.8191 38.8845C62.9952 38.2598 64.3357 37.9475 65.8404 37.9475C67.3106 37.9475 68.5905 38.2598 69.6802 
+        38.8845C70.7699 39.4919 71.5741 40.3681 72.093 41.5134L68.9538 43.2052C68.5905 42.5458 68.1322 42.06 67.5787 
+        41.7476C67.0425 41.4353 66.4545 41.2791 65.8145 41.2791C65.1227 41.2791 64.5 41.4353 63.9465 41.7476C63.393 42.06 62.952 
+        42.5024 62.6233 43.0751C62.312 43.6477 62.1563 44.3418 62.1563 45.1573C62.1563 45.9729 62.312 46.667 62.6233 
+        47.2396C62.952 47.8122 63.393 48.2547 63.9465 48.567C64.5 48.8794 65.1227 49.0355 65.8145 49.0355C66.4545 49.0355 
+        67.0425 48.888 67.5787 48.5931C68.1322 48.2807 68.5905 47.7862 68.9538 47.1094L72.093 48.8273C71.5741 49.9552 70.7699 
+        50.8315 69.6802 51.4562C68.5905 52.0635 67.3106 52.3672 65.8404 52.3672Z" fill="black"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M35.8719 52.3672C34.2806 52.3672 32.8796 52.0548 31.6689 51.4301C30.4755 
+        50.8055 29.5501 49.9552 28.8929 48.8794C28.2356 47.7862 27.907 46.5455 27.907 45.1573C27.907 43.7518 28.227 42.5111 
+        28.8669 41.4353C29.5242 40.3421 30.4149 39.4919 31.5392 38.8845C32.6634 38.2598 33.9347 37.9475 35.353 37.9475C36.7194 
+        37.9475 37.9474 38.2425 39.0371 38.8325C40.1441 39.4051 41.0175 40.238 41.6575 41.3312C42.2974 42.407 42.6174 43.6997 
+        42.6174 45.2094C42.6174 45.3656 42.6088 45.5478 42.5915 45.756C42.5742 45.9469 42.5569 46.1291 42.5396 
+        46.3026H31.9787C32.0602 46.6753 32.1904 47.0224 32.3694 47.3437C32.7153 47.9163 33.191 48.3588 33.7963 48.6711C34.419 
+        48.9661 35.1455 49.1136 35.9757 49.1136C36.7194 49.1136 37.368 49.0008 37.9215 48.7753C38.4923 48.5497 39.0112 48.2113 
+        39.4782 47.7602L41.6315 50.1027C40.9916 50.8315 40.1873 51.3954 39.2187 51.7945C38.2501 52.1763 37.1345 52.3672 35.8719 
+        52.3672ZM37.1951 41.4873C37.7139 41.7823 38.1204 42.1988 38.4144 42.7367C38.6096 43.0938 38.74 43.4929 38.8056 
+        43.934H31.932C31.9993 43.5002 32.1278 43.1098 32.3175 42.7627C32.6116 42.2075 33.018 41.7823 33.5369 41.4873C34.0731 
+        41.175 34.6871 41.0188 35.379 41.0188C36.0708 41.0188 36.6762 41.175 37.1951 41.4873Z" fill="black"/>
+        </svg>
+</nav>
+
+<section class="main-content">
+<h1>CSS Cheat Sheet</h1>
+
+<div class="container" id="border">
+    <h2>border</h2>
+    <p>Allows you to define the border of a HTML element by setting its width, style and color.</p>
+    <h3>Example</h3>
+
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">border</span>: 1px solid white;   
+    }
+    </code></pre>
+    </div>
+
+<div class="container" id="borders">
+    <h2>border-left | right | top | bottom</h2>
+    <p>Specifies a border's width, style and color based on its position relative to the content</p>
+    <h3>Example</h3>
+    <pre><code>  
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">border-left</span>: 2px solid #807fc7;
+        <span class="att">border-right</span>: 2px solid #81c77f;
+        <span class="att">border-top</span>: 2px solid #7fc7bb;
+        <span class="att">border-bottom</span>: 2px solid #7fbcc7;  
+    }
+    </code></pre>
+    </div>
+
+<div class="container" id="border-radius">
+    <h2>border-radius</h2>
+    <p>Uses a radius (or multiple radii) to curve the corners of a border</p>
+    <h3>Example</h3>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">border</span>: 2px solid white;   
+        <span class="att">border-radius</span>: 1vw 1vh;
+    }
+    </code></pre>
+</div>
+
+<div class="container" id="background-image">
+    <h2>background-image</h2>
+    <p>Allows you to set an image (or gradient) as the background of an element</p>
+    <h3>Example</h3>
+    <aside>
+        Here I selected the code snippet.
+    </aside>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">background-image</span>: 
+            linear-gradient(0, #121212 50%, #232d3e);  
+    }
+    </code></pre>
+</div>
+
+<div class="container" id="color">
+    <h2>color</h2>
+    <p>Sets the foreground color of an element which fundamentally sets the text color.</p>
+    <h3>Example</h3>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">color</span>: #bddae4;    
+    }
+    </code></pre>
+</div>
+
+<div class="container" id="font">
+    <h2>font</h2>
+    <p>The font property will set a font's size and family, but it may additionally
+        set the:
+        <ul>
+            <li>style (normal, italic or oblique)</li> 
+            <li>variant (small caps, ligatures)</li>
+            <li>weight (boldness)</li>
+            <li>stretch (condensed or expanded)</li>
+            <li>height</li>
+        </ul>
+    </p>
+
+    <h3>Example</h3>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">font</span>: small-caps bold 16px 'Seoge UI';    
+    }
+    </code></pre>
+</div>
+
+<div class="container" id="font-family">
+    <h2>font-family</h2>
+    <p>Sets the font family of an element. It can be given multiple families that creates a
+        priority list of font families to use. 
+    </p>
+    <p>It can be given specific font family names like
+        Times or a general family like sans-serif.
+    </p>
+    <h3>Example</h3>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">font-family</span>: 'Times New Roman', Times, serif;   
+    }
+    </code></pre>
+</div>
+
+<div class="container" id="font-style">
+    <h2>font-style</h2>
+    <p>Specifies the font style which can be normal, italic or oblique.
+        The oblique style can additionally be given an angle to specify a
+        slope.
+    </p>
+    <h3>Example</h3>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">font-style</span>: oblique 15deg;    
+    }
+    </code></pre>
+</div>
+
+<div class="container" id="size">
+    <h2>width & height</h2>
+    <p>Specifies an element's size according to the width and height of the box.</p>
+    <h3>Example</h3>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">width</span>: 50vw;
+        <span class="att">min-width</span>: fit-content;
+        <span class="att">height</span>: fit-content;
+        <span class="att">border</span>: 2px solid white;    
+        <span class="att">border-radius</span>: 10px;   
+    }
+    </code></pre>
+</div>
+
+<div class="container" id="list-style">
+    <h2>list-style</h2>
+    <p>It can be used to set:
+    </p>
+        <ul>
+            <li>The list style type (icons to use as bullets)</li>
+            <li>The list position (inside or outside)</li>
+        </ul>
+    <p>
+        <em>Note</em>: The list-style will apply to any element whose display property is set to list-item, and
+        the list style type can be any character or even an image.
+    </p>
+    
+    <h3>Example</h3>
+
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">list-style</span>: '♪ ';    
+    }
+    </code></pre>
+
+</div>
+<div class="container" id="margin">
+    <h2>margin</h2>
+    <p>Sets the margin area of an element, which is an area outside the element's border.
+        More than 1 value can be given to specify different margins for different sides.
+    </p>
+    <h3>Example</h3>
+    <p>
+        Here is some old CSS magic for centering, since the left and right margins get set to the same value
+        (I selected the code snippet in the CSS)
+    </p>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">margin</span>: 0 auto;    
+    }
+    </code></pre>
+</div>
+<div class="container" id="padding">
+    <h2>padding</h2>
+    <p>Sets an element's padding area, which is an area between the border and the content.
+        More than 1 value can be given to specify different paddings for different sides.
+    </p>
+    <h3>Example</h3>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">padding</span>: 3vh 3vw;
+        <span class="att">border</span>: 2px solid white;    
+    }
+    </code></pre>
+
+</div>
+<div class="container" id="overflow">
+    <h2>overflow</h2>
+    <p>When an element's content exceeds its size it overflows. The overflow property specifies the behaviour
+        for an element when this occurs (making it visible, hidden, scrollable, etc).
+    </p>
+    <h3>Example</h3>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="comment">/* This is a really long and absurd comment to overflow the size of this snippet's container in multiple displays */</span>
+    <span class="sel">selector</span> {
+        <span class="att">overflow</span>: scroll;  
+    }
+    </code></pre>
+</div>
+<div class="container" id="display">
+    <h2>display</h2>
+    <p>Display allows you to specify if an element will be treated as a block or inline. It can also be used to specify the layout of the children
+        elements which is particullary relevant for the flex and grid values.
+    </p>
+    <h3>Example</h3>    
+    <img src="./img/duck.png"/>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">display</span>: flex; 
+        <span class="att">flex-wrap</span>: wrap; 
+        <span class="att">flex-direction</span>: column;    
+        <span class="att">align-items</span>: center;  
+    }
+    </code></pre>
+
+</div>
+<div class="container" id="position">
+    <h2>position</h2>
+    <p>It specifies the behvaiour of an element regarding how it is positioned on the screen.
+        The keywords used with this property are static, relative, absolute, fixed and sticky. If
+        the position is <strong>not</strong> static, the properties top, bottom, left and right can be
+        used to place the element.
+    </p>
+    <h3>Example</h3>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">position</span>: relative; 
+        <span class="att">right</span>: -25%;    
+    }
+    </code></pre>
+</div>
+<div class="container" id="filter">
+    <h2>filter</h2>
+    <p>Filter allows you to add an effect to an element. It is primarily used for images and backgrounds.
+        Filters include the following effects:</p>
+        <ul>
+            <li>blur</li>
+            <li>brightness</li>
+            <li>contrast</li>
+            <li>drop-shadow</li>
+            <li>grayscale</li>
+            <li>hue-rotate</li>
+            <li>invert</li>
+            <li>opacity</li>
+            <li>saturate</li>
+            <li>sepia</li>
+        </ul>
+    <h3>Example</h3>
+    <img src="./img/duck.png"/>
+    <pre><code>
+    <span class="comment">/* CSS */</span>
+    <span class="sel">selector</span> {
+        <span class="att">filter</span>: opacity(40%);
+        <span class="att">display</span>: block;
+        <span class="att">margin</span>: 0 auto;    
+    }
+    </code></pre>
+</div>
+</section>
+</body>
+</html>
