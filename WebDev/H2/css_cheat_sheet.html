@@ -172,16 +172,25 @@
 </div>
 
 <div class="container" id="font-style">
-    <h2>font-style</h2>
-    <p>Specifies the font style which can be normal, italic or oblique.
+    <h2>font-style | weight</h2>
+    <p id="style">
+        The font-style property specifies the style the text will use which can be normal, italic or oblique.
         The oblique style can additionally be given an angle to specify a
         slope.
+    </p>
+    <p id="weight">
+        The font-weight property specifies the boldness (also called weight) of the font. It can be given a value
+        or the keyword 
     </p>
     <h3>Example</h3>
     <pre><code>
     <span class="comment">/* CSS */</span>
-    <span class="sel">selector</span> {
+    <span class="sel">selector1</span> {
         <span class="att">font-style</span>: oblique 15deg;    
+    }
+
+    <span class="sel">selector2</span> {
+        <span class="att">font-weight</span>: 700;    
     }
     </code></pre>
 </div>
@@ -300,7 +309,7 @@
     <pre><code>
     <span class="comment">/* CSS */</span>
     <span class="sel">selector</span> {
-        <span class="att">position</span>: relative; 
+        <span class="att">position</span>: relative;    
         <span class="att">right</span>: -25%;    
     }
     </code></pre>
@@ -326,7 +335,7 @@
     <pre><code>
     <span class="comment">/* CSS */</span>
     <span class="sel">selector</span> {
-        <span class="att">filter</span>: opacity(40%);
+        <span class="att">filter</span>: opacity(40%);    
         <span class="att">display</span>: block;
         <span class="att">margin</span>: 0 auto;    
     }

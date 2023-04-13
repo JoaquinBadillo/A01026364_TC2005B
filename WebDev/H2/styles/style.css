@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 body {
     background-color: #121212;
@@ -148,9 +148,8 @@ a:hover > svg > #signature {
 }
 
 pre {
-    font-size: calc(50% + 0.7vw);
+    font-size: calc(50% + 0.65vw);
     border-radius: 10px;
-    overflow: hidden;
     margin-bottom: 10px;
     background-color: #1E1E1E;
     width: fit-content;
@@ -173,6 +172,7 @@ pre {
 .container {
     margin-bottom: 10px;
     padding: 1vh 1vw;
+    overflow: scroll;
 }
 
 #border {
@@ -208,8 +208,12 @@ pre {
     font-family: 'Times New Roman', Times, serif;
 }
 
-#font-style p {
+#font-style #style {
     font-style: oblique 15deg;
+}
+
+#font-style #weight {
+    font-weight: 700;
 }
 
 #size {
