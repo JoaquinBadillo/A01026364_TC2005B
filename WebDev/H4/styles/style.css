@@ -58,6 +58,7 @@ nav ul a:hover {
     font-size: calc(60% + 0.5vw);
     padding: 0 15vw;
     height: 36vh;
+    font-weight: 500;
 }
 
 .banner h1 {
