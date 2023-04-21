@@ -1,0 +1,469 @@
+\documentclass[a4paper, twoside, 12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} 
+
+% Packages
+\usepackage[spanish]{babel}
+\spanishdecimal{.}
+
+% Color
+\usepackage{xcolor}
+% Figures
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+
+% PGFPLOTS
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\newlength\figureheight
+\newlength\figurewidth
+
+% Math
+\usepackage{amsmath, amssymb, amscd, amsthm, amsfonts}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+
+% Generic Symbols
+\usepackage{textcomp, gensymb}
+\usepackage{grffile}
+
+% Document properties and dummy text
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{lipsum}
+
+% Links
+\makeatletter
+\usepackage[pdftex,breaklinks]{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{xurl}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=magenta,
+    filecolor=black,      
+    urlcolor=cyan,
+    citecolor=blue,
+    pdftitle = {Diseño de la Red},
+    linktocpage = true
+}
+\urlstyle{same}
+
+% Glosarios y acrónimos
+\usepackage[acronym, numberedsection, toc]{glossaries}
+\usepackage{glossary-mcols}
+
+% Tikz
+\usepackage{tikz}
+\usetikzlibrary{scopes}
+\tikzset{
+    vertical align/.style={
+    baseline=-.5*(height("$+$")-depth("$+$"))
+    }
+}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[OL]{\color{magenta}{\textbf{\thepage}} \quad \tikz[vertical align] \draw[fill = magenta] (0,0) circle (1.25pt); \quad \color{black}{\textsc{Álgebra Relacional}}}
+\fancyhead[ER]{\color{black}{\textsc{TC2005B}} \quad \color{cyan}{\tikz[vertical align] \draw[fill = cyan] (0,0) circle (1.25pt); \quad \textbf{\thepage}}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{15pt}
+
+% SI Units
+\usepackage{siunitx}
+
+% Change captions and enumeration style
+\renewcommand\spanishlistfigurename{Índice de Figuras}
+\renewcommand\spanishtablename{Tabla}
+\renewcommand\spanishlisttablename{Índice de Tablas}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+
+% Set document properties
+\geometry{margin=2.5cm}
+\oddsidemargin 0pt
+\evensidemargin 0pt
+\marginparsep 0pt
+\linespread{2}
+
+
+\usepackage{titlesec}
+\titleformat{\section}
+  {\centering\normalfont\fontsize{24}{24}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\fontsize{11}{11}\bfseries}{\thesection}{1em}{}
+
+\usepackage{csquotes}
+\usepackage{setspace}
+
+\newcommand{\str}[1]{\mathrm{\flqq #1 \frqq}}
+\newcommand{\tblstr}[1]{\mathrm{\textsc{#1}}}
+
+\newcommand{\select}[4]{\makebox{\huge\ensuremath{\sigma}}_{\mathrm{#1} #2 #3}\left( #4 \right)}
+
+\newcommand{\project}[2]{\makebox{\huge\ensuremath{\Pi}}_{\mathrm{#1}} \left( #2 \right)}
+
+\newcommand{\rename}[3]{\makebox{\huge\ensuremath{\rho}}_{\mathrm{#1} / \mathrm{#2} } \left( #3 \right)}
+
+\newcommand{\concat}[2]{#1 \bowtie #2}
+
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+		\includegraphics[width=0.75\textwidth]{Img/logo.png}
+		
+		\vspace{20pt}
+		
+		\begin{LARGE}\bf{Ejercicios Algebra Relacional}
+		\end{LARGE}
+		
+		\vspace{30pt}
+
+		TC2005B: Construcción de software y toma de decisiones \\
+		Grupo 501\\
+		
+		\vspace{60pt}
+  
+            \textbf{Joaquín Badillo Granillo}
+            
+            Tecnológico de Monterrey\\ Campus Santa Fe
+            
+            \href{mailto:a01026364@tec.mx}{a01026364@tec.mx}
+
+            
+            
+        % ADD NAMES <3
+        
+		\vspace{60pt}
+		
+		\textbf{Bajo la instrucción de} \\
+
+        Esteban Castillo Juarez  
+    		
+		\vspace{60pt}
+		
+		20 de Abril de 2023
+	\end{center}
+\end{titlepage}
+\pagebreak
+
+\section*{Ejercicios}
+
+\subsection*{Esquema Relacional}
+
+Con la información provista para las tablas, consideré una base de datos para un evento en el que hubiera muchos participantes de distintas nacionalidades compitiendo en distintos deportes. Hay deportes en equipo que aportan un máximo de 20 puntos a cada participante ganador y hay deportes individuales que aportan un máximo de 100 puntos al primer lugar. Participantes de distintas nacionalidades pueden estar en un mismo equipo y únicamente los primeros 6 lugares obtienen puntos. Evidentemente, los lugares más altos reciben más puntos que los lugares más bajos, esto se hace de acuerdo con la siguiente tabla (la cual yo agregaría al modelo relacional), en la que a cada uno de los primeros 6 lugares se la da un multiplicador (o bien un porcentaje) para los puntos que debe recibir de acuerdo con el máximo de puntos que aporta esa competencia.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|cc|}
+        \multicolumn{2}{c}{\bfseries{\scshape{PuntosClasificacion}}}\\
+        \multicolumn{2}{c}{}\\\hline
+        \textbf{Clasificación} &  \textbf{Multiplicador}\\\hline
+         1  &   1\\
+         2  &   0.7\\
+         3  &   0.6\\
+         4  &   0.5\\
+         5  &   0.3\\
+         6  &   0.1\\\hline
+    \end{tabular}
+    \caption{Tabla de Multiplicadores por Clasificación}
+    \label{tab:PuntosClasificacion}
+\end{table}
+
+Así el segundo lugar de una competencia individual (que de acuerdo con el evento que se está modelando da un máximo de 100 puntos) recibe $100\cdot{\color{magenta}{0.7}} = 70$ puntos.
+
+Como fue solicitado se crearon tablas de ejemplo, para ello primero se hizo la tabla de \textsc{Competencia} manualmente. Después usando una API para generar nombres y apellidos se hizo la tabla de \textsc{Particpante} con 134 elementos (en la que se optó por usar un solo apellido, ya que los apellidos se pueden considerar como elementos separados pero en algunos países como Estados Unidos solo se usa uno). 
+
+Finalmente para las tablas de clasificación y puntos acumulados se creó un \textit{interactive notebook} de Python que los generara (el cual se encuentra en el repositorio), el cual creaba equipos con los IDs, asignaba lugares de forma aleatoria y asignaba los puntos de acuerdo con el modelo descrito previamente. A continuación se muestra la tabla de \textsc{Competencia} completa, así como los primeros y últimos 5 registros del resto de tablas ya que son más extensas.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|ccc|}
+        \multicolumn{3}{c}{\bfseries{\scshape{Competencia}}}\\
+        \multicolumn{3}{c}{}\\\hline
+        \textbf{NombreCompetencia} &  \textbf{NumPtos} & \textbf{Tipo} \\\hline
+        Atletismo & 100 & Individual\\
+        Baloncesto & 20 & Equipo\\
+        Boxeo & 100 & Individual\\
+        Esgrima & 100 & Individual\\
+        Volleyball & 20 & Equipo\\
+        Natación & 100 & Individual\\
+        Karate & 100 & Individual\\
+        Hockey (Hielo) & 20 & Equipo\\\hline
+    \end{tabular}
+    \caption{Tabla de Competencias}
+    \label{tab:Comp}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|cccc|}
+        \multicolumn{4}{c}{\bfseries{\scshape{Participante}}}\\
+        \multicolumn{4}{c}{}\\\hline
+        \textbf{Numero} &  \textbf{Apellidos} & \textbf{Nombre} & \textbf{Nacionalidad} \\\hline
+         1 &	Jacobs   & Maurice &	Australiana\\
+         2 &	Konečná  & Lea     &	Eslovaca\\
+         3 &	Јоргонић & Виолета &	Serbia\\
+         4 &	Solís    & Naia    &	Venezolana\\
+         5 &	Vlad     & Vlad    &	Rumana\\
+         \multicolumn{4}{|c|}{}\\
+         \multicolumn{4}{|c|}{$\vdots$}\\
+         \multicolumn{4}{|c|}{}\\
+         130 &	Giraldo &	Shivansh &	Canadiense\\
+         131 &	Cashman &	Mei      &   Estadounidense\\
+         132 &	Robert  & Bernard  &   Mexicana\\
+         133 &	Heim    &	Kenyon	  &   Costarricense\\
+         134 &	Block	 & Isaias	  &   Estadounidense\\\hline
+    \end{tabular}
+    \caption{Tabla de Participantes}
+    \label{tab:Participante}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|cc|}
+        \multicolumn{2}{c}{\bfseries{\scshape{PuntosAcumulados}}}\\
+        \multicolumn{2}{c}{}\\\hline
+        \textbf{Numero} &  \textbf{Puntos}\\\hline
+         1 & 0	\\
+         2 & 0	\\
+         3 & 12 \\
+         4 & 70	\\
+         5 & 0	\\
+         \multicolumn{2}{|c|}{}\\
+         \multicolumn{2}{|c|}{$\vdots$}\\
+         \multicolumn{2}{|c|}{}\\
+         130 &	14 \\
+         131 &	74 \\
+         132 &	6 \\
+         133 &	22 \\
+         134 &	0 \\\hline
+    \end{tabular}
+    \caption{Tabla de Puntos Acumulados}
+    \label{tab:Puntos}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|ccc|}
+        \multicolumn{3}{c}{\bfseries{\scshape{Clasificacion}}}\\
+        \multicolumn{3}{c}{}\\\hline
+        \textbf{NombreCompetencia} &  \textbf{Numero} & \textbf{Lugar} \\\hline
+         Baloncesto &	      1   & 9\\
+         Volleyball &	      1   & 7\\
+         Hockey (Hielo) &   1   & 8\\
+         Volleyball &	      2   & 9\\
+         Hockey (Hielo) &	   2   & 7\\
+         \multicolumn{3}{|c|}{}\\
+         \multicolumn{3}{|c|}{$\vdots$}\\
+         \multicolumn{3}{|c|}{}\\
+         Boxeo          &	133   &	8\\
+         Volleyball     &	133   &	1\\
+         Hockey (Hielo) &	133   &   6\\
+         Baloncesto     &	134   &	12\\
+         Hockey (Hielo) &	134   &   10\\\hline
+    \end{tabular}
+    \caption{Tabla de Clasificaciones}
+    \label{tab:Clas}
+\end{table}
+
+Si desea ver las tablas completas, estas se pueden encontrar en un archivo {\tt{index.html}} en la carpeta de tablas en el repositorio; este formato se escogió por la extensión de las tablas y para asegurar la compatibilidad, sin tener que crear el esquema en SQL.
+
+\subsection*{1. Apellidos y nombre de los participantes de nacionalidad mexicana.}
+
+Primero podemos obtener los registros de los participantes de nacionalidad mexicana con una selección. La tabla \textsc{Participante} contiene todos los campos necesarios, el apellido y el nombre; así como la nacionalidad. Una vez obtenida la tabla con todos los registros de nacionalidad mexicana, usamos una proyección para tener la tabla solicitada:
+\begin{equation*}
+    \project
+        {\mathrm{Apellidos,\, Nombre}}
+        {\select
+            {Nacionalidad}
+            {=}
+            {\str{mexicana}}
+            {\tblstr{Participante}}} \quad \blacksquare
+\end{equation*}
+
+
+\subsection*{2. Apellidos, nombre y puntos acumulados de los participantes de USA}
+Nuevamente podemos primero encontrar a todos los participantes de Estados Unidos con una selección sobre la tabla \textsc{Participante}. Posteriormente se puede hacer una concatenación con la tabla de \textsc{PuntosAcumulados} para agregar el campo de puntos acumulados y finalmente hacer una proyección para tener los campos deseados de apellidos, nombre y puntos.
+\vspace{-14pt}
+\begin{equation*}
+    \resizebox{\textwidth}{!}
+    {
+        $\project
+            {\mathrm{Apellidos,\, Nombre,\, Puntos}}
+            {\concat
+                {\tblstr{PuntosAcumulados}}
+                {\select
+                    {Nacionalidad}
+                    {=}
+                    {\str{estadounidense}}
+                    {\tblstr{Participante}}}} \quad \blacksquare$
+    }
+\end{equation*}
+
+\subsection*{3. Apellidos y nombre de los participantes que se clasificaron en primer lugar en al menos una competencia}
+
+Primero podemos encontrar los índices de los participantes que se clasificaron en primer lugar seleccionando esos registros en la tabla de \textsc{Clasificacion}. Una vez determinados los índices, para encontrar sus apellidos y nombres se concatena la tabla resultante con la tabla de participantes y finalmente se proyectan los campos deseados (apellidos y nombre).
+\begin{equation*}
+\project
+    {\mathrm{Apellidos,\, Nombre}}
+    {\concat
+        {\tblstr{Participante}}
+        {\select
+            {Lugar}
+            {=}
+            {1}
+            {\tblstr{Clasificacion}}}} \quad \blacksquare
+\end{equation*}
+
+\subsection*{4. Nombre de las competencias en las que intervinieron los participantes mexicanos}
+Primero podemos determinar que participantes son mexicanos con una selección sobre la tabla \textsc{Participante}, posteriormente podemos ver en qué competencias participaron usando concatenación y finalmente para ver los nombres de las competencias utilizamos una proyección en la tabla resultante.
+\vspace{-14pt}
+\begin{equation*}
+    \project
+        {\mathrm{NombreCompetencia}}
+        {\concat
+            {\tblstr{Clasificacion}}
+            {\select
+                {Nacionalidad}
+                {=}
+                {\str{mexicana}}
+                {\tblstr{Participante}}}} \quad \blacksquare
+\end{equation*}
+
+En realidad habíra nombres de competencias duplicados, pero como la consulta no dice que eso no sea posible no es necesario hacer más operaciones. Si fuera realmente necesario se puede hacer una intersección entre los nombres de competencias (obtenidos con una proyección) y el resultado de la consulta anterior.
+
+\subsection*{5. Apellidos y nombre de los participantes que nunca se clasificaron en primer lugar en alguna competencia}
+
+Podemos primero encontrar a los participantes que clasificaron en primer lugar en alguna competencia (ver ejercicio 3) para realizar la diferencia entre esta y la tabla de participantes. Finalmente se proyectan los campos deseados: apellidos y nombres.
+\vspace{-14pt}
+\begin{equation*}
+\begin{split}
+R_{1} &= \project
+    {\mathrm{Numero,\, Apellidos,\, Nombre}}
+    {\concat
+        {\tblstr{Participante}}
+        {\select
+            {Lugar}
+            {=}
+            {1}
+            {\tblstr{Clasificacion}}}}\\
+R_{2} &= 
+    \project
+        {\mathrm{Numero,\, Apellidos,\, Nombre}}
+        {\tblstr{Participante}}\\
+& \project
+    {\mathrm{Apellidos,\, Nombre}}
+    {R_{2} - R_{1}} 
+  \quad\blacksquare
+\end{split}
+\end{equation*}
+
+\subsection*{6. Apellidos y nombre de los participantes que siempre se clasificaron en alguna competencia}
+
+Con la información provista para las tablas, considere modelar un evento en el que hubiera muchos participantes compitiendo en distintos deportes y en el que todos los participantes ya habían ``clasificado'' para competir. Sin embargo, como fue mencionado previamente, para modelar los puntos de los participantes consideré que solo los primeros 6 lugares ganaran puntos. De esta forma, se puede entender que clasificar en este contexto es ser miembro de uno de los primeros 6 equipos o uno de los primeros 6 competidores en alguna competencia.
+
+Como se buscan los participantes que \textbf{siempre} hayan clasificado en estas posiciones, se pueden encontrar en primera instancia todos los competidores que en al menos una ocasión no hayan ``clasificado'' (seleccionando los registros en los que el lugar sea mayor a 6) y proyectar únicamente los IDs (llamado Numero).
+
+\begin{equation*}
+    R_1 = \project
+            {\mathrm{Numero}}
+            {\select
+                {Lugar}
+                {>}
+                {6}
+                {\tblstr{Clasificación}}}
+\end{equation*}
+
+Posteriormente se obtienen todos los números existentes de los competidores proyectando esa columna de la tabla \textsc{Participante} y se obtienen los participantes que siempre clasificaron con una diferencia. 
+
+\begin{equation*}
+    R_2 = \project
+            {\mathrm{Numero}}
+            {\tblstr{Participante}}
+        - R_1
+\end{equation*}
+
+Finalmente para obtener los nombres y apellidos se realiza una concatenación del resultado de la diferencia con la tabla \textsc{Participante} y se proyectan las columnas deseadas de Apellidos y Nombre.
+
+\begin{equation*}
+    \project
+        {\mathrm{Apellidos,\, Nombre}}
+        {R_2 \bowtie {\tblstr{Participante}}}   \quad   \blacksquare
+\end{equation*}
+
+\subsection*{7. Nombre de la competencia que aporta el máximo de puntos}
+Para encontrar el puntaje máximo, se podría comparar cada puntaje contra los demás. En álgebra relacional se puede crear una tabla con todas las combinaciones de puntajes posibles usando el producto cartesiano; lo cual nos permite realizar las comparaciones. Además para solo agregar un campo adicional con los valores a comparar podemos primero hacer una proyección del campo de puntajes en la tabla de competencia, después lo renombramos para tener un campo adicional de valores a comparar y finalmente hacemos el producto cartesiano:
+
+\begin{equation*}
+    R_{1} = \tblstr{Competencia}
+        \times
+    \rename
+        {NumPtos}
+        {PtosComp}
+        {\project
+            {NumPtos}
+            {\tblstr{Competencia}}}
+\end{equation*}
+
+Idealmente se buscaría usar una desigualdad para determinar que valor es más grande que los demás; sin embargo, como el producto cartesiano crea todas las combinaciones posibles eventualmente el máximo se compara consigo mismo. Entonces definiendo $p_{\mathrm{real}}$ como el puntaje real de una competencia y $p_{\mathrm{comparado}}$ como el puntaje que se está usando para comparar (las celdas del campo PtosComp), la condición $p_{\mathrm{real}} > p_{\mathrm{comparado}}$ descartaría todos los puntajes, mientras que incluir una igualdad $p_{\mathrm{real}} \geq p_{\mathrm{comparado}}$ nos regresaría todos los puntajes ya que todos los puntajes se comparan consigo mismos en al menos una ocasión.
+
+No obstante, lo que si se puede determinar son todos los puntajes que no son el máximo realizando una selección con la condición $p_{\mathrm{real}} < p_{\mathrm{comparado}}$ y además se puede regresar la tabla al formato original proyectando los campos NombreCompetencia, NumPtos y Tipo:
+\begin{equation*}
+    R_{2} = 
+        \project
+            {\mathrm{NombreCompetencia,\, NumPtos,\, Tipo}}
+            {\select
+                {NumPtos}
+                {<}
+                {\mathrm{PtosComp}}
+                {R_{1}}}
+\end{equation*}
+
+
+De esta manera encontrar el máximo es tan sencillo como tomar la diferencia entre la tabla de participantes y la tabla de los participantes que no son el máximo. Además, como en la consulta se desea únicamente el nombre de la competencia, realizamos una proyección de este campo sobre la tabla resultante
+\begin{equation*}
+    \project
+        {\mathrm{NombreCompetencia}}
+        {\tblstr{Competencia} - R_{2}} \quad \blacksquare
+\end{equation*}
+
+
+\subsection*{8. Países (nacionalidades) que participaron en todas las competencias}
+
+Usando las operaciones básicas del álgebra relacional está consulta parece ser muy complicada, sin embargo hay un operador adicional que nos puede ser muy útil para esta consulta, llamado el operador de división. De acuerdo con la fuente de consulta de esta clase (\textit{Database systems: a practical approach to design, implementation and management}) la división $R\div S$ da como resultado la tabla con todas las tuplas de $R$ que coinciden la combinación de cada tupla en $S$ \cite[177]{db}. Por ende se pueden obtener primero todas las competencias existentes con una proyección del campo NombreCompetencia de la tabla \textsc{Competencia}
+\begin{equation*}
+    R_{1} = \project
+                {\mathrm{NombreCompetencia}}
+                {\tblstr{Competencia}}
+\end{equation*}
+
+Después encontrar que participantes coinciden con todos los elementos de la tabla anterior realizando la división
+\begin{equation*}
+    R_{2} = \tblstr{Competencia} \div R_{1}
+\end{equation*}
+
+Para finalmente deducir su nacionalidad con una concatenación con la tabla \textsc{Participante} seguido de una proyección del campo de nacionalidad
+\begin{equation*}
+   \project
+       {\mathrm{Nacionalidad}}
+       {\tblstr{Participante} \bowtie R_{2}} \quad \blacksquare
+\end{equation*}
+\clearpage
+
+\begin{thebibliography}{99}
+
+\bibitem{db}
+Connolly, T. M. (2015). \textit{Database systems: a practical approach to design, implementation and management}. Pearson (6\textsuperscript{a} ed.). \url{http://www.cherrycreekeducation.com/bbk/b/Pearson_Database_Systems_A_Practical_Approach_to_Design_Implementation_and_Management_6th_Global_Edition_1292061189.pdf}
+
+\end{thebibliography}
+\end{document}
