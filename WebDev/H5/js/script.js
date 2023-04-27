@@ -5,14 +5,14 @@ import { findUnique, bubblesort, invertNew, invert, capitalize, gcd, hackerSpeak
 
 // If you want to test the functions directly in your browser's console uncomment the following (but this might overwrite existing functions)
 
-/* let funcs = [findUnique, bubblesort, invertNew, invert, capitalize, gcd, hackerSpeak, factorize, removeDuplicates, 
-             smallestStringSize, isPalindrome, sortStrings, getStats, trendyString, isPow2, sortDescending]
+// let funcs = [findUnique, bubblesort, invertNew, invert, capitalize, gcd, hackerSpeak, factorize, removeDuplicates, 
+//              smallestStringSize, isPalindrome, sortStrings, getStats, trendyString, isPow2, sortDescending]
 
-let totalFuncs = funcs.length;
+// let totalFuncs = funcs.length;
 
-for (let i = 0; i < totalFuncs; i++) {
-    window[funcs[i].name] = funcs[i];
-} */
+// for (let i = 0; i < totalFuncs; i++) {
+//     window[funcs[i].name] = funcs[i];
+// }
 
 // TEST FUNCTIONS
 console.log("1. First unique character in a string");
