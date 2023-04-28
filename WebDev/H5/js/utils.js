@@ -19,7 +19,6 @@ export function findUnique(str) {
     return "";
 }
 
-
 /**
  * Sort an array of numbers in place using bubble sort
  * @param {number[]} arr - An array of numbers
@@ -53,15 +52,24 @@ export function bubblesort(arr){
  * @return {number[]} A new array with the elements inverted
  */
 export function invertNew(arr) {
-    const newArr = new Array();
-
-    const size = arr.length;
-
-    for (let i = 0; i < size; i++)
-        newArr[i] = arr[size - 1 -i];
-
-    return newArr;
+    // Having some fun here with a cryptic ";" that is actually required to run properly hahaha 🥷 
+    // For anyone reading this and wondering why is the semicolon required: it allows the variable newArray to be inicialized
+    return arr.reduceRight((newArray, current) => {;return newArray.concat(current)}, []);
 }
+
+/* This was my original approach:
+
+    function invertNew(arr) {
+        const newArr = new Array();
+
+        const size = arr.length;
+
+        for (let i = 0; i < size; i++)
+            newArr[i] = arr[size - 1 -i];
+
+        return newArr;
+    } 
+*/
 
 /**
  * Given an array of numbers,invert all elements in place
@@ -81,18 +89,14 @@ export function invert(arr) {
     return arr;
 }
 
-
 /**
  * Capitalize the words in a string
  * @param {string} str - A string of text
  * @return {string} A new string with all the words capitalized
  */
 export function capitalize(str) {
-    return str.split(" ").map(
-            (word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(" ")
+    return str.split(" ").map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
 }
-
 
 /**
  * Calculate the greatest common divisor of 2 numbers
@@ -101,12 +105,21 @@ export function capitalize(str) {
  * @return {number} The gcd of a and b
  */
 export function gcd(a, b) {
-    if (a == 0)
-        return b;
-    else if (b == 0)
-        return a;
-    else
-        return gcd(Math.min(a,b), Math.max(a,b) % Math.min(a, b));
+
+    // Inner function in which it is guaranteed that the first argument is greater than or equal to the second one.
+    function do_gcd(max, min) {
+        return b == 0 ? a : gcd(min, max % min);
+    }
+
+    // Make sure that arguments are integers and make them positive
+    if (Number.isInteger(a) && Number.isInteger(b)) {
+        a = Math.abs(a);
+        b = Math.abs(b);
+
+        return do_gcd(Math.max(a, b), Math.min(a,b));
+    }
+
+    return undefined;
 }
 
 /**
@@ -127,7 +140,7 @@ export function hackerSpeak(str) {
         "g": 9
     }
 
-    return str.split("").map(chr => translate[chr.toLowerCase()] || chr).join("");
+    return [...str].map(chr => translate[chr.toLowerCase()] ?? chr).join("");
 }
 
 /**
@@ -137,14 +150,13 @@ export function hackerSpeak(str) {
  */
 export function factorize(num) {
     const factors = new Array();
-    for (let i = 1; i < num; i++) {
+    for (let i = 1; i <= num; i++) {
         if (num % i == 0)
             factors.push(i);
     }
 
     return factors;
 }
-
 
 /**
  * Create an array of unique elements
@@ -162,11 +174,8 @@ export function removeDuplicates(arr) {
  * @return {number} The size of the smallest string in the array
  */
 export function smallestStringSize(arr) {
-    let smallest = arr[0].length;
-    for (let str of arr)
-        smallest = str.length < smallest ? str.length : smallest;
-    
-    return smallest
+    // Some good fold (left) maneuvers here
+    return arr.reduce((smallest, current) => {return current.length < smallest ? current.length : smallest}, arr[0]?.length ?? 0);
 }
 
 /**
@@ -201,6 +210,7 @@ export function sortStrings(arr) {
  * @return {Stats} An object containing the median and the mode
  */
 export function getStats(nums) {
+    
     /**
      * @typedef {object} Stats
      * @property {number} median - The median of a set of data
@@ -213,15 +223,16 @@ export function getStats(nums) {
 
     const popularity = {};
 
-    /* I remember there's a way to find the median in linear time...
-       I'm to lazy 😴 to deal with that tho. So I will sort and make it run in O(n lg n) time :3
-       In this case the side effect of sorting might be undesirable, so I will create a sorted copy of the array. */
+    /* I remember I once read there's a way to find the median in linear time...
+       I'm to lazy 😴 to deal with that tho. So I will sort and make it run in O(n lg n) time lol
+       In this situation, the side effect of sorting might be undesirable, so I will create a sorted copy of the array. */
 
     let sortedNums = [...nums].sort((a, b) => a - b);
 
     let size = nums.length;
     let midpoint = size / 2;
-    stats.median = size % 2 == 0 ? sortedNums[midpoint] + sortedNums[midpoint + 1] : sortedNums[Math.floor(midpoint)];
+
+    stats.median = size % 2 == 0 ? (sortedNums[midpoint - 1] + sortedNums[midpoint]) / 2 : sortedNums[Math.floor(midpoint)];
 
     for (let num of nums)
         popularity[num] = (popularity[num] ?? 0) + 1;
@@ -282,4 +293,4 @@ export function sortDescending(nums) {
 }
 
 // You made it to the end!
-// You found the hidden cat: 🐱
+// You found the hidden cat: 🐱!
