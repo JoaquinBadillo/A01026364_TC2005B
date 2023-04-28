@@ -52,9 +52,8 @@ export function bubblesort(arr){
  * @return {number[]} A new array with the elements inverted
  */
 export function invertNew(arr) {
-    // Having some fun here with a cryptic ";" that is actually required to run properly hahaha 🥷 
-    // For anyone reading this and wondering why is the semicolon required: it allows the variable newArray to be inicialized
-    return arr.reduceRight((newArray, current) => {;return newArray.concat(current)}, []);
+    // Having some fun here  🥷 
+     return arr.reduceRight((newArray, current) => {return newArray.concat(current)}, []);
 }
 
 /* This was my original approach:
@@ -210,7 +209,7 @@ export function sortStrings(arr) {
  * @return {Stats} An object containing the median and the mode
  */
 export function getStats(nums) {
-    
+
     /**
      * @typedef {object} Stats
      * @property {number} median - The median of a set of data
