@@ -200,7 +200,7 @@ export function isPalindrome(str) {
  * @return {string[]} The array of strings sorted alphabetically
  */
 export function sortStrings(arr) {
-    return arr.sort((a, b) => a.localeCompare(b));
+    return [...arr].sort((a, b) => a.localeCompare(b));
 }
 
 /**
