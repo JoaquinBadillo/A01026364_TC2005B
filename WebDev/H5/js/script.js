@@ -23,7 +23,8 @@ console.log(findUnique('abacddbec'));
 console.log("2. Bubble Sort");
 const arr = Array.from({length: 9}, () => Math.floor(Math.random() * 10));
 console.log(`Testing with [${arr}]`);
-console.log(bubblesort(arr));
+bubblesort(arr);
+console.log(`[${arr}]`);
 
 console.log("3. Invert the elements of an array");
 console.log(`Testing with [${arr}]`);
