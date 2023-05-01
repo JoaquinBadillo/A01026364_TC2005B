@@ -5,12 +5,12 @@ import { findUnique, bubblesort, invertNew, invert, capitalize, gcd, hackerSpeak
 
 // If you want to test the functions directly in your browser's console uncomment the following code (but this might overwrite existing functions)
 
-/* let funcs = [findUnique, bubblesort, invertNew, invert, capitalize, gcd, hackerSpeak, factorize, removeDuplicates, 
+let funcs = [findUnique, bubblesort, invertNew, invert, capitalize, gcd, hackerSpeak, factorize, removeDuplicates, 
              smallestStringSize, isPalindrome, sortStrings, getStats, trendyString, isPow2, sortDescending]
 
 for (let func of funcs) {
         window[func.name] = func
-} */
+}
 
 
 // THE OLD LOGGING TEST SUITE
@@ -23,8 +23,7 @@ console.log(findUnique('abacddbec'));
 console.log("2. Bubble Sort");
 let arr = Array.from({length: 9}, () => Math.floor(Math.random() * 10));
 console.log(`Testing with [${arr}]`);
-bubblesort(arr);
-console.log(arr);
+console.log(bubblesort(arr));
 
 console.log("3. Invert the elements of an array");
 console.log(`Testing with [${arr}]`);
