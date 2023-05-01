@@ -31,16 +31,14 @@ export function bubblesort(arr){
         let swaps = 0
         for (let j = 0; j < size - i; j++) {
             if(arr[j] > arr[j + 1]) {
-                let temp = arr[j + 1];
-                arr[j + 1] = arr[j];
-                arr[j] = temp;
+                [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
                 swaps += 1;
             }
         }
         
         // Check number of swaps to terminate early (if no swaps were made you are done)
         if (swaps == 0)
-            return arr
+            return arr;
     }
 
     return arr;

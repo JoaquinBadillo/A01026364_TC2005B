@@ -21,7 +21,7 @@ console.log("Testing with 'abacddbec'");
 console.log(findUnique('abacddbec'));
 
 console.log("2. Bubble Sort");
-let arr = Array.from({length: 9}, () => Math.floor(Math.random() * 10));
+const arr = Array.from({length: 9}, () => Math.floor(Math.random() * 10));
 console.log(`Testing with [${arr}]`);
 console.log(bubblesort(arr));
 
@@ -72,7 +72,7 @@ console.log(getStats([1, 8, 2, 3, 4, 5, 2, 3, 2, 4]));
 
 console.log("13. Check the most frequent string in a list");
 console.log("Testing with the 4th, 5th and 6th stanzas from Numb by Elderbrook (the verses are the strings)");
-arr = ["Oh, reachin' in the dark",
+let lyrics = ["Oh, reachin' in the dark",
         "Nothing's there to touch",
         "I wish I could love", // You found the hidden cat of the main script: 🐱🧶
         "But I'm still numb",
@@ -81,7 +81,7 @@ arr = ["Oh, reachin' in the dark",
         "And the feeling's gone",
         "But I'm still numb",
         "Love, I can't be the only one"]
-console.log(`${trendyString(arr)} 🎵`);
+console.log(`${trendyString(lyrics)} 🎵`);
 
 
 console.log("14. Check if a number is a power of 2");
@@ -97,6 +97,6 @@ console.log(isPow2(1/4));
 
 
 console.log("15. Sort in descending order");
-arr = Array.from({length: 9}, () => Math.floor(Math.random() * 10));
-console.log(`Testing with [${arr}]`);
-console.log(sortDescending(arr));
+let arr2 = Array.from({length: 9}, () => Math.floor(Math.random() * 10));
+console.log(`Testing with [${arr2}]`);
+console.log(sortDescending(arr2));
