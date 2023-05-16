@@ -1,0 +1,134 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container{
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+table, td{
+    border: 1px solid black;
+}
+
+code {
+    font-family: monospace;
+    border-radius: 4px;
+    padding: 1px;
+}
+
+pre {
+    margin: 0;
+    font-family: monospace;
+}
+
+pre > code {
+    color: aliceblue;
+}
+
+.verified {
+    width: fit-content;
+    margin: 0 auto;
+    font-weight: 600;
+}
+
+/* Estilos para hacer burbujitas de chat */
+.chat {
+    --radius: 20px;
+    --small-radius: 1px;
+    font: 16px/1.5;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    max-width: 90%;
+    margin: 15px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+  }
+  
+  .msg {
+    position: relative;
+    max-width: 60%;
+    padding: 7px 15px;
+    margin-bottom: 2px;
+  }
+  
+  /* Copilot va a estar a la izquierda en color azul */
+  .msg.copilot {
+    border-radius: var(--radius) var(--radius) var(--small-radius) var(--radius);
+    background: #4b90c9;
+    color: #fff;
+    margin-left: auto;
+  }
+
+  .msg.copilot code {
+    color: #d7e9ff;
+    background-color: #2f597c;
+  }
+
+  pre.msg.copilot {
+    background: #2f597c;
+  }
+  
+  /* Gepetto va a estar a la derecha en color verde */
+  .msg.gpt {
+    border-radius: var(--radius) var(--radius) var(--radius) var(--small-radius);
+    background: #0fa37f;
+    color: #fff;
+    margin-right: auto;
+  }
+
+  .msg.gpt code {
+    color: #dcfdf4;
+    background-color: #13755d;
+  }
+
+  pre.msg.gpt {
+    background: #13755d;
+  }
+
+  @media (max-width: 1000px) {
+    pre > code {
+        white-space:pre-line;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .msg {
+        max-width: 100%;
+        overflow: scroll;
+    }
+  }
+
+  /* Usaremos el before pseudo-attribute para poner los nombres de quién está hablando */
+  /* Agregamos además un atributo name en el primer mensaje para mostrarlo */
+  .msg::before {
+    content: attr(name);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    color: #505050;
+    white-space: nowrap;
+    display: none;
+  }
+
+  .msg.copilot::before {
+    right: 15px;
+  }
+  
+  .msg.gpt::before {
+    left: 15px;
+  }
+
+  .msg.copilot+.msg.gpt,
+  .msg.gpt+.msg.copilot {
+    display: block;
+    margin-top: 40px;
+  }
+
+  .msg:first-child::before,
+  .msg.copilot+.msg.gpt::before,
+  .msg.gpt+.msg.copilot::before {
+    display: block;
+  }
