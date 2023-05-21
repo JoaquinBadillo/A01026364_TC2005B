@@ -30,7 +30,7 @@ INSERT INTO deportista (`id_pais`, `nombre`, `apellidos`, `sexo`) VALUES (1, 'Ju
 (1, 'María', 'Peréz', 'F'),
 (2, 'John', 'Doe', 'M'),
 (2, 'Jane', 'Doe', 'M'),
-(3, 'Anne', 'Dupont', 'F'),
+(3, 'Mary', 'Anne', 'F'),
 (3, 'James', 'Bond', 'M'),
 (4, 'Erika', 'Ding', 'F'),
 (4, 'Hans', 'Müller', 'M'),
