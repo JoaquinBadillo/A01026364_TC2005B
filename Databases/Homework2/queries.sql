@@ -9,6 +9,7 @@ SELECT apellidos, nombre, SUM(prueba.puntos_aportados) FROM deportista
 INNER JOIN clasificacion ON deportista.matricula_deportista = clasificacion.matricula_deportista
 INNER JOIN prueba ON clasificacion.id_prueba = prueba.id_prueba
 WHERE deportista.id_pais = 2
+GROUP BY deportista.matricula_deportista;
 
 -- Apellidos y nombre de los participantes que se clasificaron en primer lugar en al menos una competencia.
 SELECT apellidos, nombre FROM deportista
