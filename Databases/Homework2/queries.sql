@@ -57,10 +57,12 @@ SELECT MIN(prueba.puntos_aportados) FROM prueba
 INNER JOIN disciplina ON prueba.id_disciplina = disciplina.id_disciplina;
 
 -- Porpongan una consulta que involucre dos tabla con GROUP BY
---- Encontrar el número de participantes por país
-SELECT pais.nombre, COUNT(deportista.matricula_deportista) FROM pais
-INNER JOIN deportista ON pais.id_pais = deportista.id_pais
-GROUP BY pais.nombre;
+-- Apellidos, nombre y puntos acumulados de los participantes de Canadá.
+SELECT apellidos, nombre, SUM(prueba.puntos_aportados) FROM deportista
+INNER JOIN clasificacion ON deportista.matricula_deportista = clasificacion.matricula_deportista
+INNER JOIN prueba ON clasificacion.id_prueba = prueba.id_prueba
+WHERE deportista.id_pais = 3
+GROUP BY deportista.matricula_deportista;
 
 -- Porpongan una consulta que involucre tres tablas con las sentencias LEFT JOIN, ORDER BY, GROUP BY Y LIMIT
 --- Encontrar a los 5 deportistas que obtuvieron la mayor cantidad de puntos
